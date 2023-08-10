@@ -1,0 +1,2 @@
+# Site
+[![Quality gate](https://sq.de-svitlo.com.ua/api/project_badges/quality_gate?project=lez1_site_site_AYamsBKRPRvU-q8mlOEz&token=252e2a97ccc7fcf4d2be09b05723d6a58ce9eed9)](https://sq.de-svitlo.com.ua/dashboard?id=lez1_site_site_AYamsBKRPRvU-q8mlOEz)

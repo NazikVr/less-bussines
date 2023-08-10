@@ -1,0 +1,236 @@
+
+.slider-news {
+  a:hover {
+    text-decoration-color: var(--greyColor);
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+    padding-right: 22px !important;
+  }
+  
+  .img-news-item {
+    padding-bottom: 0;
+  }
+
+  .swiper-scrollbar {
+    margin-bottom: 120px;
+    margin-top: 60px;
+    background-color: var(--greyColor) !important;
+    height: 1.6px !important;
+    position: relative !important;
+    &::before {
+      content: '2023';
+      font-family: var(--fontFamily);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      color: var(--greyColor);    
+    }
+    &::after {
+      content: '2018';
+      font-family: var(--fontFamily);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      color: var(--greyColor);
+      position: absolute;
+      right: 0;
+      top: 5px;    
+    }
+  }
+  
+  .swiper-scrollbar-drag {
+    width: 60px !important;
+    background-color: var(--firmGreenColor) !important;
+    border-radius: 2px !important;
+    height: 6px !important;
+    top: -26.75px !important;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    &::before {
+        content: url(../img/arrow-news.svg);
+        display: block;
+        position: absolute;
+        background: #2F3133;
+        backdrop-filter: blur(2.5px);
+        border-radius: 2px;
+        width: 56px;
+        height: 48px;
+        right: -20px;
+        top: 140px;
+        z-index: 9;
+        padding: 15px;
+    }
+
+    img {
+        display: block;
+        width: 400px;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        border-radius: 4px;
+        filter: grayscale(50%);
+        transition: all 0.3s;
+      }
+
+      &:hover {
+        img{
+          filter: grayscale(0%);
+        }
+      }
+  }
+  
+  .swiper-slide:hover::before {
+      background: var(--firmGreenColor);
+  }
+  
+  .arrow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:15px;
+    margin-bottom: 145px;
+    position: relative;
+    margin-top: -40px;
+    z-index: 20;
+    &::before {
+      content: "Або використовуйте клавіатуру";
+      display: block;
+      position: absolute;
+      text-align: center;
+      width: 150px;
+      height: 50px;
+      font-size: 14px;
+      line-height: 16px;
+      color: var(--greyColor);
+      top: -50px;
+    }
+  }
+  
+  .image-swiper-button-next,
+  .image-swiper-button-prev {
+    border: 1px solid var(--greyColor);
+    border-radius: 3px;
+    padding: 15px 25px;
+    transition: all 0.3s; 
+    cursor: pointer;
+
+    svg path {
+      transition: all 0.3s;
+    }
+
+    &:hover{
+      svg path {
+        fill: #77C043;
+      }
+      border-color: var(--firmGreenColor);
+    }
+  }
+  
+  .image-swiper-button-prev {
+    transform: rotate(180deg);
+  }
+
+  .item-news{
+    margin-bottom: 25px;
+  
+    h2{
+      font-family: var(--montFontFamily);
+      font-style: normal;
+      font-weight: 800;
+      font-size: 48px;
+      line-height: 56px;
+      color: var(--fontColor);
+    }
+    span {
+      font-family: var(--fontFamily);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: var(--greyColor);
+      display: block;
+      float: right;
+      padding: 30px 20px 0 0;
+      cursor: pointer;
+
+      &:hover {
+        .news-all-arrow path {
+          fill: var(--themeColor);
+        }
+        a {
+          color: var(--themeColor);
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1400px) {
+  .slider-news .swiper-slide img {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .slider-news .swiper-slide img {
+    width: 290px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .slider-news .swiper-slide img {
+    width: 320px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .slider-news .swiper-slide img {
+    width: 240px;
+  }
+}
+
+@media screen and (max-width: 544px) {
+  .slider-news {
+    .swiper-scrollbar {
+      margin-top: 30px;
+      margin-bottom: 60px;
+    }
+    .arrow-container {
+      display: none;
+    }
+    .swiper-slide {
+      a, span {
+        display: block;
+        width: 100%;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .item-news {
+      h2 {
+        font-size: 44px;
+        line-height: 53px;   
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 410px) { 
+  .slider-news .item-news h2 {
+    font-size: 33px;
+    line-height: 46px;
+  }
+ }
+

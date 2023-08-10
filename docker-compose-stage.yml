@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+ lez-front:
+    container_name: lez-front
+    image: asdcompany/lez-front-react-stage:latest
+    expose:
+      - 80  
+    networks:
+      - internal
+      - web
+    volumes:
+      - /mnt/lez/uploads/site:/app/public/uploads
+
+networks:
+   web:
+     external: true
+   internal:
+     external: false
+

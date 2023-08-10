@@ -1,0 +1,547 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  background-image: url(../img/bg-b.jpg);
+  background-size: 100% 100%;
+
+  .heading {
+    margin-bottom: 10px;
+    margin-left: -15px;
+    h3 {
+      max-width: 400px;
+      // line-height: 60px;
+    }
+  }
+
+  .slider-home {
+    position: relative;
+    z-index: 2;
+    .heading {
+      .container {
+        padding: 0;
+      }
+    }
+  }
+
+  .type {
+    margin-bottom: 40px;
+  }
+  .swiper-slide {
+    padding: 0 20px;
+  }
+
+  .swiper-wrapper {
+    min-height: 685px;
+    padding-bottom: 55px;
+  }
+
+  .main-slide {
+    z-index: 2;
+    h1 {
+      font-family: var(--montFontFamily);
+      font-style: normal;
+      font-weight: 500;
+      font-size: 64px;
+      line-height: 72px;
+      text-align: center;
+      width: 100%;
+      height: 52vh;
+      transition: all 0.3s;
+    }
+    &__electro {
+      color: var(--themeColor);
+      font-weight: 600;
+      font-size: 72px;
+    }
+    &__gaz {
+      color: var(--firmYellowColor);
+      font-weight: 600;
+      font-size: 72px;
+    }
+    &__ukraine {
+      color: var(--firmGreenColor);
+      font-size: 56px;
+      font-weight: 600;
+    }
+    &__territory {
+      font-size: 54px;
+    }
+  }
+
+  .dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 60px;
+    z-index: 2;
+    .dot {
+      cursor: pointer;
+      background: #858a8f;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    .dot_active {
+      width: 16px;
+      height: 16px;
+      background: url("../img/bullet.svg");
+    }
+  }
+}
+
+.left-view {
+  position: absolute;
+  left: 0;
+  top: -145px;
+  width: 400px;
+  height: 512px;
+  // background-image: url("../img/main-left-bg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .image-swiper-button-prev {
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    top: 465px;
+    left: 50px;
+    z-index: 2;
+    &::after {
+      content: "Електроенергія";
+      color: var(--fontColor);
+      left: 70px;
+      width: 120px;
+      position: absolute;
+    }
+  }
+}
+
+.right-view {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 400px;
+  height: 512px;
+  // background-image: url("../img/main-right-bg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .image-swiper-button-next {
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    top: 15px;
+    right: -320px;
+    z-index: 2;
+    &::before {
+      content: "Природний газ";
+      color: var(--fontColor);
+      right: 50px;
+      width: 120px;
+      position: absolute;
+    }
+  }
+}
+
+.view-arrows {
+  width: 100%;
+  justify-content: space-between;
+  position: absolute;
+  top: 300px;
+  z-index: 2;
+
+  .image-swiper-button-prev {
+    cursor: pointer;
+    position: relative;
+    right: 50px;
+  }
+  .image-swiper-button-next {
+    cursor: pointer;
+    position: relative;
+    // top: 5px;
+    left: 30px;
+  }
+}
+
+/*================================================
+   HomeServiceSlide component styles 
+=================================================*/
+
+.slide-servises {
+  counter-reset: myItemsCounter;
+}
+
+.slide-servise-item {
+  padding: 15px;
+  position: relative;
+  &::after {
+    counter-increment: myItemsCounter;
+    content: "0" counter(myItemsCounter);
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    font-family: var(--fontFamily);
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 24px;
+    color: #858a8f;
+    z-index: 1;
+  }
+}
+
+.slide-servise-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 35px;
+  max-height: 185px;
+  background: var(--firmColor);
+  box-shadow: 5px 5px 15px #262829;
+  border-radius: 4px;
+
+  &:hover {
+    text-decoration-color: var(--greyColor);
+  }
+
+  img {
+    width: 55px;
+    height: 55px;
+  }
+  p {
+    max-width: 300px;
+    color: var(--themeColor);
+  }
+}
+
+.slide-servise-invite {
+  font-family: var(--fontFamily);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.social {
+  line-height: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  a {
+    &:hover {
+      color: var(--greyColor);
+      text-decoration-color: var(--greyColor);
+    }
+  }
+  img {
+    margin-right: 10px;
+  }
+}
+
+.media {
+  padding-top: 10px;
+}
+
+.slide-servises-title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+/*================================================
+   AboutSlide component styles 
+=================================================*/
+
+.about {
+  padding-bottom: 10px;
+  &__inner {
+    background: var(--firmColor);
+    box-shadow: 5px 5px 15px #262829;
+    border-radius: 4px;
+    padding: 20px 24px 24px 24px;
+  }
+}
+
+.direction-slide {
+  justify-content: space-between;
+  padding-right: 30px;
+}
+
+.direction {
+  margin-bottom: 50px;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__photo {
+    width: 190px;
+    height: 235px;
+    object-fit: contain;
+    object-position: center;
+    margin-bottom: 15px;
+  }
+
+  &__name {
+    font-weight: 500;
+    span {
+      display: block;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    color: var(--firmGreenColor);
+    font-family: var(--montFontFamily);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+  }
+  &__position {
+    width: 200px;
+  }
+}
+
+.homeslide-rectangle {
+  width: 24px;
+  height: 4px;
+  margin-bottom: 4px;
+}
+
+/*================================================
+   AboutVideo component styles 
+=================================================*/
+
+.about-video {
+  &__content {
+    margin-top: 25px;
+    .right {
+      color: var(--firmGreenColor);
+      text-align: right;
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .view-arrows .image-swiper-button-prev {
+    right: 25px;
+  }
+  .view-arrows .image-swiper-button-next {
+    left: 10px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .direction__photo {
+    width: 165px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .direction {
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+  .direction-slide {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home .main-slide {
+    h1 {
+      font-size: 44px;
+      line-height: 56px;
+    }
+    &__electro {
+      font-size: 52px;
+    }
+    &__gaz {
+      font-size: 52px;
+    }
+    &__ukraine {
+      font-size: 36px;
+    }
+    &__territory {
+      font-size: 34px;
+    }
+  }
+  .direction {
+    margin-right: 25px;
+    margin-left: 25px;
+    width: 38%;
+  }
+
+  .home .swiper-wrapper {
+    min-height: 485px;
+  }
+
+  .left-view {
+    background-size: contain;
+    left: -40px;
+    top: -145px;
+    height: 460px;
+
+    .image-swiper-button-prev {
+      top: 415px;
+      left: 62px;
+    }
+  }
+  .right-view {
+    background-size: contain;
+    right: -58px;
+    height: 360px;
+    .image-swiper-button-next {
+      top: 15px;
+      right: -288px;
+    }
+  }
+
+  .view-arrows .image-swiper-button-prev {
+    right: 5px;
+  }
+  .view-arrows .image-swiper-button-next {
+    left: -35px;
+  }
+
+  .about-video__frame {
+    width: 90%;
+    margin-right: 15px;
+  }
+  .about-video-inner {
+    justify-content: center;
+  }
+  .slide-servises {
+    padding-left: 10px;
+    padding-right: 28px;
+  }
+  .about {
+    padding-left: 25px;
+    padding-right: 45px;
+  }
+}
+
+@media screen and (max-width: 528px) {
+  .home .main-slide {
+    h1 {
+      font-size: 40px;
+      line-height: 53px;
+    }
+    &__electro {
+      font-size: 40px;
+    }
+    &__gaz {
+      font-size: 40px;
+    }
+    &__ukraine {
+      font-size: 36px;
+    }
+    &__territory {
+      font-size: 34px;
+    }
+  }
+
+  .right-view {
+    .image-swiper-button-next {
+      &::before {
+        right: -50px;
+        font-size: 15px;
+        top: 60px;
+      }
+    }
+  }
+  .left-view {
+    .image-swiper-button-prev {
+      &::after {
+        left: -15px;
+        font-size: 15px;
+        top: 60px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 487px) {
+  .direction-slide {
+    justify-content: center;
+    padding-right: 40px;
+    padding-left: 8px;
+  }
+  .direction {
+    margin-left: 0;
+    margin-right: 0;
+    width: 50%;
+  }
+  .direction__photo {
+    width: 155px;
+  }
+  .direction__position {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .direction {
+    margin-right: 70px;
+  }
+  .direction-slide {
+    padding-left: 15px;
+  }
+  .direction__photo {
+    width: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .about__inner {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .home .main-slide {
+    h1 {
+      font-size: 40px;
+      line-height: 39px;
+    }
+    &__electro {
+      font-size: 30px;
+    }
+    &__gaz {
+      font-size: 30px;
+    }
+    &__ukraine {
+      font-size: 30px;
+    }
+    &__territory {
+      font-size: 34px;
+    }
+  }
+  .header__icons,
+  .logo__inner,
+  .menu-map {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .direction-slide {
+    padding-left: 0px;
+  }
+}
